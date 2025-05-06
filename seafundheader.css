@@ -1,0 +1,94 @@
+.seafund-header {
+  background-color: rgb(19, 25, 33);
+  color: white;
+  padding-left: 40px;
+  padding-right: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+}
+
+.seafund-header h2 {
+  color: white;
+}
+
+.seafund-header-left-section {
+  width: 180px;
+}
+
+@media (max-width: 800px) {
+  .seafund-header-left-section {
+    width: unset;
+  }
+}
+
+.header-link {
+  display: inline-block;
+  padding: 6px;
+  border-radius: 2px;
+  cursor: pointer;
+  text-decoration: none;
+  border: 1px solid rgba(0, 0, 0, 0);
+}
+
+.header-link:hover {
+  border: 1px solid white;
+}
+
+.seafund-header-left-section img {
+  width: 50px;
+  margin-top: 6px;
+  margin-left: 10px;
+}
+
+.seafund-header-right-section {
+  width: 180px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.orders-link {
+  color: white;
+}
+
+.orders-text {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.cart-link {
+  color: white;
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-left: 10px;
+}
+
+.cart-text {
+  margin-top: 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.cart-quantity {
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  font-weight: 700;
+
+  position: absolute;
+  top: 5px;
+  left: 55px;
+  
+  width: 26px;
+  text-align: center;
+}

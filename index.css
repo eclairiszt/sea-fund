@@ -1,0 +1,221 @@
+/*.seafund-header {
+  background-color: rgb(19, 25, 33);
+  color: white;
+  padding-left: 40px;
+  padding-right: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+}
+
+.seafund-header h2 {
+  color: white;
+}
+
+.seafund-header-left-section {
+  width: 180px;
+}
+
+.seafund-header-left-section img {
+  width: 50px;
+  margin-top: 6px;
+  margin-left: 10px;
+}
+
+
+@media (max-width: 800px) {
+  .seafund-header-left-section {
+    width: unset;
+  }
+}
+
+.header-link {
+  display: inline-block;
+  padding: 6px;
+  border-radius: 2px;
+  cursor: pointer;
+  text-decoration: none;
+  border: 1px solid rgba(0, 0, 0, 0);
+}
+
+.header-link:hover {
+  border: 1px solid white;
+}
+
+.seafund-header-right-section {
+  width: 180px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.about-us-link {
+  color: white;
+}
+
+.about-us {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.cart-link {
+  color: white;
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-left: 10px;
+}
+
+.cart-text {
+  margin-top: 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.cart-quantity {
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  font-weight: 700;
+
+  position: absolute;
+  top: 5px;
+  left: 55px;
+  
+  width: 26px;
+  text-align: center;
+}
+
+.main img {
+  text-align: center;
+}*/
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-image: url("images/seabg.jpg");
+  background-position: center-top;
+}
+
+/* Header styles (optional refinement) */
+.seafund-header {
+  background-color: rgb(19, 25, 33);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  height: 60px;
+}
+
+.seafund-header img {
+  height: 50px;
+  margin-top: 6px;
+  margin-left: 25px;
+}
+
+.header-link {
+  text-decoration: none;
+  color: white;
+}
+
+.about-us {
+  font-weight: bold;
+}
+
+/* Main content styles */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Make logo image responsive */
+.logo img {
+  max-width: 100%;
+  height: auto;
+  width: 250px;
+}
+
+/* Typography */
+.title h2 {
+  font-size: 2rem;
+  margin: 1rem 0 0.5rem 0;
+}
+
+.description {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Buttons */
+.buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #000000;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.buttons a {
+  text-decoration: none;
+  color: white;
+}
+button:hover {
+  background-color: #0c2d48;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .title h2 {
+    font-size: 1.5rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  button {
+    width: 100%;
+    max-width: 250px;
+  }
+}
+
+.shop-button {
+  text-decoration: none;
+  color: white;
+}
