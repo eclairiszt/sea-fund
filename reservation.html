@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Checkout</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--Google Font-->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!--Stylesheet-->
+    <link rel="stylesheet" href="general.css">
+    <link rel="stylesheet" href="reservationheader.css">
+    <link rel="stylesheet" href="seafundheader.css">
+    <link rel="stylesheet" href="reservation.css">
+  </head>
+  <body>
+    <!--Header-->
+    <div class="seafund-header">
+      <div class="seafund-header-left-section">
+        <a href="shop.html" class="header-link">
+          <img src="images/logo-1.png">
+        </a>
+      </div>
+
+      <div class="seafund-header-right-section">
+        <a class="orders-link header-link" href="orders.html">
+          <div class="orders-text"></div>
+        </a>
+
+        <a class="cart-link header-link" href="reservation.html">
+          <div class="cart-quantity js-cart-quantity"></div>
+          <div class="cart-text">Cart</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="checkout-header">
+      <div class="header-content">
+        <div class="checkout-header-left-section">
+          <!--<a href="index.html">
+            <h2>Sea Fund</h2>
+          </a>-->
+        </div>
+
+        <div class="checkout-header-middle-section">
+          Checkout (<a class="return-to-home-link js-return-to-home-link"
+            href="index.html"></a>)
+        </div>
+
+        <div class="checkout-header-right-section">
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="page-title">Review your order</div>
+
+      <div class="checkout-grid">
+        <div class="order-summary js-order-summary">
+        </div>
+      </div>
+
+      <div class="payment-summary-container">
+        <div class="payment-summary js-payment-summary">
+      </div>
+    </div>
+    <!--Javascript-->
+    <script type="module" src="javascript/reservation.js"></script>
+  </body>
+</html>

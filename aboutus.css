@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding:0 ;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+
+.container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%, -50%);
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    width: 75%;
+    display: flex;
+    box-shadow: 0 1px 20px 0 rgb(0, 0, 0);
+}
+
+.container .left{
+    width: 35%;
+    background:linear-gradient(#343434,#939393);
+    padding: 30px 25px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    text-align: center;
+    justify-content: center;
+}
+.container .left h1{
+    font-size: 30px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+
+.container .left img{
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+.container .right{
+    width: 65%;
+    background: white;
+    padding: 30px 25px;
+}
+
+.container .left button {
+  border-radius: 5px;
+  padding: 5px;
+  margin-top: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.right .row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+.right .dev{
+    align-items: center;
+}
+
+  
+.dev img:hover {
+    transition: 0.3s ease;
+    filter: brightness(70%);
+}
+
+
+.container .right .info, .container .right .data,  .container .right .projects{
+    margin-bottom: 20px;
+  }
+
+
+
+ .right .button {
+    padding: 12px 25px;
+    background-color: #fb7185;
+    color: black;
+    text-align: center;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    border-radius: 10px;
+    border:2px solid black;
+  }

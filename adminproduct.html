@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin - Manage Products</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="adminproduct.css">
+</head>
+<body>
+  <header>
+    <h1>Admin Dashboard</h1>
+    <div class="profile-menu" onclick="toggleDropdown()">
+      <div class="profile-pic">
+        <img src="images/logo-1.png">
+      </div>
+      <div class="dropdown" id="dropdown-menu">
+        <a href="shop.html">Go to Shop</a>
+        <a href="index.html" onclick="confirmLogout()">Log Out</a>
+      </div>
+    </div>
+  </header>
+
+  <h2>Products</h2>
+
+  <form id="newProductForm">
+    <input type="text" id="newProductName" placeholder="Product Name" required />
+    <input type="number" id="newProductPrice" placeholder="Price (₱)" required />
+    <input type="number" id="newProductStock" placeholder="Stock" required />
+    <button type="submit">Add Product</button>
+  </form>
+
+  <table class="product-table">
+    <thead>
+      <tr>
+        <th>Product Name</th>
+        <th>Price</th>
+        <th>Stock</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody id="product-list"></tbody>
+  </table>
+
+  <script>
+    const defaultProducts = [
+      { name: "Crab Keychain", price: 250, quantity: 100 },
+      { name: "Orca Keychain", price: 250, quantity: 100 },
+      { name: "Octopus Keychain", price: 250, quantity: 100 },
+      { name: "Pink Whale Keychain", price: 250, quantity: 100 },
+      { name: "Blue Whale Keychain", price: 250, quantity: 100 },
+    ];
+
+    let products = JSON.parse(localStorage.getItem('products')) || defaultProducts;
+
+    const productList = document.getElementById('product-list');
+
+    function saveProducts() {
+      localStorage.setItem('products', JSON.stringify(products));
+    }
+
+    function renderProducts() {
+      productList.innerHTML = '';
+
+      products.forEach((product, index) => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td><strong>${product.name}</strong></td>
+          <td>₱${product.price}</td>
+          <td>${product.quantity}</td>
+          <td>
+            <button class="edit-btn" onclick="editProduct(${index})">Edit</button>
+            <button class="delete-btn" onclick="deleteProduct(${index})">Delete</button>
+          </td>
+        `;
+        productList.appendChild(row);
+      });
+    }
+
+    function deleteProduct(index) {
+      if (confirm(`Delete "${products[index].name}"?`)) {
+        products.splice(index, 1);
+        saveProducts();
+        renderProducts();
+      }
+    }
+
+    function editProduct(index) {
+      const product = products[index];
+      const newName = prompt("Edit product name:", product.name);
+      if (newName === null) return;
+
+      const newPrice = parseFloat(prompt("Edit product price (₱):", product.price));
+      if (isNaN(newPrice)) return alert("Invalid price!");
+
+      const newQuantity = parseInt(prompt("Edit stock quantity:", product.quantity));
+      if (isNaN(newQuantity)) return alert("Invalid quantity!");
+
+      products[index] = {
+        name: newName.trim() || product.name,
+        price: newPrice,
+        quantity: newQuantity
+      };
+
+      saveProducts();
+      renderProducts();
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      renderProducts();
+
+      const form = document.getElementById("newProductForm");
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const name = document.getElementById("newProductName").value.trim();
+        const price = parseFloat(document.getElementById("newProductPrice").value);
+        const quantity = parseInt(document.getElementById("newProductStock").value);
+
+        if (!name || isNaN(price) || isNaN(quantity)) {
+          alert("Please fill in all fields correctly.");
+          return;
+        }
+
+        products.push({ name, price, quantity });
+        saveProducts();
+        renderProducts();
+        form.reset();
+      });
+    });
+
+    function toggleDropdown() {
+      const dropdown = document.getElementById("dropdown-menu");
+      dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+    }
+
+    function confirmLogout() {
+      const confirmed = confirm("Are you sure you want to log out?");
+      if (confirmed) {
+        window.location.href = "login.html";
+      }
+    }
+
+    window.addEventListener("click", function (e) {
+      const profile = document.querySelector(".profile-menu");
+      if (!profile.contains(e.target)) {
+        document.getElementById("dropdown-menu").style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>
